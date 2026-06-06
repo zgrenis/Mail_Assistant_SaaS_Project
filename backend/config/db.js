@@ -11,6 +11,7 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: false
 });
+//test
 
 //? prod env
 /*const pool = new Pool({

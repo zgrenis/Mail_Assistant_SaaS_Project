@@ -12,21 +12,21 @@ Kullanıcıların Gmail hesaplarını bağlayarak gelen mailleri otomatik olarak
 │  Frontend          │       │                      │       │  (Container)             │
 └────────────────────┘       └──────┬───────────────┘       └──────────────────────────┘
                                     │                               │
-                          ┌─────────▼──────────┐                  │
+                          ┌─────────▼──────────┐                    │
                           │  PostgreSQL DB     │        ┌─────────▼────────────┐
                           │                    │        │ Vector Storage       │
                           └────────────────────┘        │ (Embeddings/FAQ)     │
                                     │                   └──────────────────────┘
-                          ┌─────────▼──────────┐
-                          │  Gmail API         │        ┌──────────────────────┐
-                          │  (OAuth2)          │        │ Groq API             │
+                          ┌─────────▼──────────┐                    |
+                          │   Gmail API        │        ┌──────────────────────┐
+                          │   (OAuth2)         │        │ Groq API             │
                           └────────────────────┘        │ (Chat/LLM)           │
-                                                         └──────────────────────┘
-
-┌──────────────────┐
-│ HuggingFace      │ (E-mail Classification)
-│ Classification   │
-└──────────────────┘
+                                                        └──────────────────────┘
+                                                                    |  
+                                                          ┌──────────────────┐
+                                                          │ HuggingFace      │ 
+                                                          │ Classification   │
+                                                          └──────────────────┘
 ```
 
 ---
